@@ -16,20 +16,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from portfolio import views
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("", views.about_me_view, name="about_me"),
-    path('experience/',views.experience_view, name="experience"),
-    path('', include('portfolio.urls')),
+path('admin', admin.site.urls),
+path('', include('portfolio.urls')),
+path('', include ('projects.urls')),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 
 
 """
-views.py
+views.py(under projects)
 from djando.urls import path
 from projects import views
 
@@ -42,6 +45,9 @@ urlpatterns = [
 
 urls.py
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
 path('admin', admin.site.urls),
@@ -49,7 +55,19 @@ path('', include('portfolio.urls')),
 path('', include ('projects.urls')),
 ]
 
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+from django.contrib import admin
+from django.urls import path, include
+from portfolio import views
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path("", views.about_me_view, name="about_me"),
+    path('experience/',views.experience_view, name="experience"),
+    path('', include('portfolio.urls')),
+]
 
 projects
 
@@ -66,4 +84,7 @@ class Project(models.Model):
     image = models.ImageField(upload_to='project/')
     repository = models.URLField()
     skills = models.ManyToManyField("Skill")
+
+
+
 """
