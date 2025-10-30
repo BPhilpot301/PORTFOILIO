@@ -1,0 +1,23 @@
+[
+  {
+    "entity": "Universidad Autónoma de Baja California",
+    "title": "Professor of Programming",
+    "description": "Teaching web development and backend technologies to undergraduate students.",
+    "period": "2020 – Present",
+    "technologies": ["Python", "Django", "HTML", "CSS", "Git"]
+  },
+  {
+    "entity": "TecNM Campus Tijuana",
+    "title": "Research and Development Coordinator",
+    "description": "Led academic projects and mentored students in software engineering.",
+    "period": "2017 – 2020",
+    "technologies": ["Java", "MySQL", "Scrum"]
+  },
+  {
+    "entity": "Freelance",
+    "title": "Frontend Developer",
+    "description": "Designed and built responsive websites for small businesses.",
+    "period": "2015 – 2017",
+    "technologies": ["HTML", "CSS", "JavaScript", "Bootstrap"]
+  }
+]

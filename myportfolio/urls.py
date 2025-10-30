@@ -1,0 +1,69 @@
+"""
+URL configuration for myportfolio project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/5.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path, include
+from portfolio import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path("", views.about_me_view, name="about_me"),
+    path('experience/',views.experience_view, name="experience"),
+    path('', include('portfolio.urls')),
+]
+
+
+
+
+"""
+views.py
+from djando.urls import path
+from projects import views
+
+
+urlpatterns = [
+    path('projects/', views.projects_view, name= "projects"),
+]
+
+
+
+urls.py
+
+
+urlpatterns = [
+path('admin', admin.site.urls),
+path('', include('portfolio.urls')),
+path('', include ('projects.urls')),
+]
+
+
+
+projects
+
+from django.bd import models
+
+class Skill(models.Model):
+    name = models.CharField(max_length=50)
+
+
+class Project(models.Model):
+    name = models.CharField(max_length=50)
+    description = models.TextField()
+    year = models.IntegerField()
+    image = models.ImageField(upload_to='project/')
+    repository = models.URLField()
+    skills = models.ManyToManyField("Skill")
+"""
