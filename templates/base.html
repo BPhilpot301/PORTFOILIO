@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +9,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800&family=Lobster&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="static./css/base.css">
-    <link rel="stylesheet" href="static./css/header.css">
-    <link rel="stylesheet" href="static./css/section.css">
-    <link rel="stylesheet" href="static./css/footer.css">
-    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="{%static '/css/base.css'%}">
+    <link rel="stylesheet" href="{%static '/css/header.css'%}">
+    <link rel="stylesheet" href="{%static '/css/section.css'%}">
+    <link rel="stylesheet" href="{%static '/css/footer.css'%}">
+    <link rel="stylesheet" href="{%static '/css/responsive.css'%}">
     <title>
         {% block title %}
         {% endblock %}
@@ -37,10 +38,10 @@
 
             <!--Links or Options of the Menu-->
             <div class="nav-link center">
-                <a href="">About me</a>
+                <a href="{% url 'about_me' %}">About me</a>
                 <a href="">Projects</a>
-                <a href="">Experience</a>
-                <a href="">Contact</a>
+                <a href="{% url 'experience' %}">Experience</a>
+                <a href="{% url 'contact' %}">Contact</a>
             </div>
 
         </nav>
