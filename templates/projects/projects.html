@@ -2,30 +2,35 @@
 {% load static %}
 
 {% block title %}
-    Projects
+Projects page
 {% endblock title %}
 
 {% block content %}
-<section class="projects-section center column">
+        <section class="projects-section center-column">
 
-    <h2>Projects</h2>
+        <h2>Projects</h2>
 
-    <div class="projects-list">
-        <a href="https://github.com/" target="_blank">
-            <img src="{% static 'img/picture-3.jpg' %}" alt="">
-            <p>First Project Name</p>
-            <p>This is the description for my first project.</p>
-            <p>YYYY</p>
+        <div class="projects-list">
+            <!--All the cards-->
+            {% for project in projects %}
+            <div class="project-card">
+                <a href="{{ project.repository }}"target="_blank">
+                    <img src="{{ project.image.url }}">
+                    <p>{{ project.name }}</p>
+                    <p>{{ project.description }}</p>
+                    <p>{{ project.year }}</p>
 
-            <div class="skills-container center-column">
-                <label class="text-label">Skills</label>
-                <label class="text-label">Skills</label>
-                <label class="text-label">Skills</label>
-                <label class="text-label">Skills</label>
+
+                    <div class="skills-container center">
+            {% for skill in project.skills.all %}
+                        <label class="text-label">{{ skill.name }}</label>
+            {% endfor %}
+                    </div>
+
+                </a>
             </div>
+            {% endfor %}
+        </div>
 
-    </div>
-
-</section>
-
+    </section>
 {% endblock content %}

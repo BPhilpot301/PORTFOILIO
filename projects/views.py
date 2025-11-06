@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from . import models
+
 
 # Create your views here.
 
@@ -11,4 +13,7 @@ def experience_view(request):
 
 def projects_view(request):
     return render(request, 'projects/projects.html')
+
+def contact_view(request):
+    return render(request, 'portfolio/contact.html')
 
