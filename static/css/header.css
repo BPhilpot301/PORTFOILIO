@@ -1,5 +1,5 @@
 header {
-    background-color: var(--surface-color);
+    background-color: var(--primary-color);
     height: 60px;
     position:sticky;
     top: 0px;
