@@ -11,4 +11,4 @@ def contact_view(request):
     return render(request,'portfolio/contact.html')
 
 def projects_view(request):
-    return render(request, 'portfolio/projects.html')
+    return render(request, 'projects/projects.html')
