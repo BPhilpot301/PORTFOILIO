@@ -137,15 +137,15 @@ a p:nth-child(4),  .experience-card p:nth-child(4)  {
 /* Contact Section */
 .contact-section {
   padding: 4rem 1rem;
-  background-color: #16213e;
-  color: #ffffff;
+  background-color: #d8d8d8;
+  color: #000000;
   text-align: center;
   flex-direction: column;
 }
 
 .contact-section h2 {
   font-size: 2rem;
-  color: #00ff00;
+  color: #069fe6;
   margin-bottom: 2rem;
 }
 
@@ -160,8 +160,8 @@ a p:nth-child(4),  .experience-card p:nth-child(4)  {
 
 .contact-form input,
 .contact-form textarea {
-  background-color: #1a1a2e;
-  border: 1px solid #00ff00;
+  background-color: #c4c4c4;
+  border: 1px solid #000000;
   border-radius: 5px;
   padding: 0.8rem 1rem;
   color: #ffffff;
@@ -173,12 +173,12 @@ a p:nth-child(4),  .experience-card p:nth-child(4)  {
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: #00cc00;
-  box-shadow: 0 0 5px #00ff00;
+  border-color: #000000;
+  box-shadow: 0 0 5px #ffffff;
 }
 
 .contact-form button {
-  background-color: #00ff00;
+  background-color: #ffffff;
   color: #1a1a2e;
   font-weight: bold;
   padding: 0.8rem;
@@ -189,5 +189,5 @@ a p:nth-child(4),  .experience-card p:nth-child(4)  {
 }
 
 .contact-form button:hover {
-  background-color: #00cc00;
+  background-color: #00b7ff;
 }
